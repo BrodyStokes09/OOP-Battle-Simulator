@@ -38,7 +38,3 @@ class Hero:
     def is_alive(self):
         return self.health > 0
 
-    __init__()
-    strike()
-    receive_damage()
-    is_alive()
