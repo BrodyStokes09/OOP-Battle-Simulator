@@ -13,18 +13,21 @@ def main():
 
     # Create goblins ༼ ºل͟º ༽ ༼ ºل͟º ༽ ༼ ºل͟º ༽
     goblins = [Goblin(f"Goblin {i+1}", "green") for i in range(3)]
-    parker = [Parker(f"Parker {i+1}", "brown") for i in range(4)]
 
     # Keep track of how many goblins were defeated
     defeated_goblins = 0
     total_damage = 0
     rounds = 0
-
+    boss = True
     # Battle Loop 
-    while hero.is_alive() and any(goblin.is_alive() for goblin in goblins) and any(parker.is_alive() for parker in parker):
+    while hero.is_alive() and any(goblin.is_alive() for goblin in goblins):
         print("\nNew Round!")
         rounds += 1
         # Hero's turn to attack
+        if rounds % 5 == 0 and boss == True:
+            print("Boss Round Rahhhh")
+            parker = Parker("Parker")
+            goblins.append(parker)
         target_goblin = random.choice([goblin for goblin in goblins if goblin.is_alive()])
         damage = hero.strike()
         print(f"Hero attacks {target_goblin.name} for {damage} damage!")
