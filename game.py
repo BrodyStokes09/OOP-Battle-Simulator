@@ -25,7 +25,7 @@ def main():
         rounds += 1
         # Hero's turn to attack
 
-        if rounds % 5 == 0 and boss == True:
+        if hero.is_alive() and boss == True:
             print("Boss Round Rahhhh")
             parker = Parker("Parker")
             goblins.append(parker)
