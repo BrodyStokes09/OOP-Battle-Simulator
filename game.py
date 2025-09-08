@@ -24,10 +24,12 @@ def main():
         print("\nNew Round!")
         rounds += 1
         # Hero's turn to attack
+
         if rounds % 5 == 0 and boss == True:
             print("Boss Round Rahhhh")
             parker = Parker("Parker")
             goblins.append(parker)
+
         target_goblin = random.choice([goblin for goblin in goblins if goblin.is_alive()])
         damage = hero.strike()
         print(f"Hero attacks {target_goblin.name} for {damage} damage!")
