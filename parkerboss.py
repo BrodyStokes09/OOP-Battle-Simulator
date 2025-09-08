@@ -8,7 +8,7 @@ class Parker(Enemy):
 
     def attack(self):
         if self.health < 100:
-            self.attack_power = 80
+            self.attack_power = 800
         elif self.health < 160:
             self.attack_power = 60
         elif self.health < 50:
